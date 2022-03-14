@@ -50,23 +50,17 @@ $resultado->setFetchMode(PDO::FETCH_ASSOC);
                     </ul>
 
                     <ul class="navbar-nav d-flex justify-content-end">
-                        <li class="nav-item">
-                            <a href="carrito.php" class="nav-link">Carrito</a>
-                        </li>
-                        <li>
-                            <a href="login.php" class="nav-link p-2">
-                               <?php
-                                if(isset($usuario)){
-                                    echo $usuario;
-                                }else{
-                                    echo "Alejandro";
-                                }
-                                ?>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="config/salir.php" class="nav-link">Desconectar</a>
-                        </li>
+                        <?php
+
+                            if(isset($usuario)){
+                                echo '<li> <a href="#" class="nav-link">Carrito</a></li>';
+                                echo '<li> <a href="#" class="nav-link">'. $usuario .'</a></li>';
+                                echo '<li> <a href="config/salir.php" class="nav-link">Desconectar</a></li>';
+                            } else{
+                                echo '<li> <a href="registro.php" class="nav-link">Crear cuenta</a></li>';
+                                echo '<li> <a href="login.php" class="nav-link">Log in</a></li>';
+                            }
+                        ?>
                     </ul>
 
 
